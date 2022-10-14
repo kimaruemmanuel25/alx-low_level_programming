@@ -1,12 +1,14 @@
-include <stdio.h>
+#include <stdio.h>
 #include <stdlib.h>
+
 /**
  * main - Prints the minimum number of coins to
- * make change for an amount of money.
+ *        make change for an amount of money.
  * @argc: The number of arguments supplied to the program.
  * @argv: An array of pointers to the arguments.
+ *
  * Return: If the number of arguments is not exactly one - 1.
- * Otherwise - 0.
+ *         Otherwise - 0.
  */
 int main(int argc, char *argv[])
 {
@@ -15,9 +17,11 @@ int main(int argc, char *argv[])
 	if (argc != 2)
 	{
 		printf("Error\n");
-		return (0);
+		return (1);
 	}
+
 	cents = atoi(argv[1]);
+
 	while (cents > 0)
 	{
 		coins++;
@@ -43,6 +47,8 @@ int main(int argc, char *argv[])
 		}
 		cents--;
 	}
+
 	printf("%d\n", coins);
+
 	return (0);
 }
